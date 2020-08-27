@@ -1,5 +1,18 @@
 import sys
 
+# Analisis de complejidad -----------------------------------------------------
+#
+# Temporal: Este problema es knapsack, pero con todos los valores iguales a su
+# 			peso, por lo que se debe construir una tabla de n*W elementos donde
+# 			W es el tamano del CD y n la cantidad de canciones. En este caso
+# 			construir la tabla toma O(nW) y la reconstrucción de la solucion en
+# 			base a la tabla es O(n). Por lo tanto su complejidad esta dominada
+# 			por O(nW).
+# 
+# Espacial: Como se tiene que es el problema de knapsack se construye la tabla
+# 			de n*W elementos por lo tanto se tiene una complejidad espacial de
+# 			O(nW).
+
 def knapsack(N, n, t):
 	m = [ [0]*(N+1) for _ in range(n+1) ]
 	t = t[::-1]
@@ -35,4 +48,3 @@ for line in sys.stdin:
 	k = knapsack(N, n, t)
 	cs = ' '.join(str(c) for c in k)
 	print('{} sum:{}'.format(cs, sum(k)))
-

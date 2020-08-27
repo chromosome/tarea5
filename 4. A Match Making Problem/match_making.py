@@ -1,6 +1,17 @@
 import sys
 
-def handle_input_set(B, S, case_count):
+# Analisis de complejidad -----------------------------------------------------
+#
+# Temporal: En este caso lo unico que se necesita hacer es obtener la cantidad
+# 			de soleros al final del emparejamiento, por lo tanto solo es 
+# 			necesario obtener los solteros que sobran al acabarse las solteras
+# 			por lo tanto se tiene una complejidad O(n) sobre la entrada.
+#
+# Espacial: Se procesan los datos de entrada uno a la vez por lo que nunca se
+# 			trabaja con mas de uno, por lo tanto su complejidad espacial es 
+# 			O(1).
+
+def match(B, S, case_count):
 	remaining = B - S if B - S >= 0 else 0
 	b = 61
 	for _ in range(B):
@@ -21,6 +32,6 @@ for line in sys.stdin:
 	B, S = int(B), int(S)
 
 	if B != 0 and S != 0:
-		handle_input_set(B, S, case_count)
+		match(B, S, case_count)
 
 	case_count += 1

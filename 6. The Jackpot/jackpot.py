@@ -1,5 +1,18 @@
 import sys
 
+# Analisis de complejidad -----------------------------------------------------
+#
+# Temporal: El algoritmo sigue una estrategia voraz en la que suma los 
+# 			resultados de las apuestas a medida que se hacen, luego al momento
+# 			de perder todo el dinero se termina la racha y se guarda su valor
+# 			maximo. Esto se hace para todas las apuestas y se compara el valor
+#			maximo de cada racha. Como actua sobre cada uno de los elementos de
+# 			entrada se tiene una complejidad de O(n).
+#
+# Espacial: El algoritmo trabaja sobre la cantidad de datos de entrada, por lo
+# 			que en este caso se tiene complejidad O(n), pero puede modificarse
+# 			para que lea elementos de a uno y obtener O(1).
+
 def jackpot(bets):
 
 	max_streak = 0
